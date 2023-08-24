@@ -14,3 +14,10 @@ The 12th project of 42 curriculum is a C++ piscine which aims to introduce stude
 |08|Templated containers, iterators, algorithms|-|-|
 |09|STL|-|-|
 
+# References
+
+About C++ code formatting: 
+- https://github.com/motine/cppstylelineup
+
+Repositories of fellow 42 students:
+- https://github.com/qingqingqingli/CPP/wiki/
