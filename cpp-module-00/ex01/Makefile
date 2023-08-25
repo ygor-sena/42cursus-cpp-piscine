@@ -2,7 +2,7 @@
 ##                                   CPP-00                                   ##
 ################################################################################
 
-NAME  := account
+NAME  := phonebook
 
 RESET := \033[0m
 CYAN  := \033[1;36m
@@ -16,12 +16,11 @@ LOG   := printf "[$(CYAN)$(CHECK)$(RESET)] %s\n"
 OBJ_DIR   := obj
 INC_DIRS  := include
 
-HEADERS := Account.hpp
+HEADERS := Contact.hpp PhoneBook.hpp
 
-SOURCES := tests.cpp Account.cpp
+SOURCES := main.cpp Contact.cpp PhoneBook.cpp
 
 OBJS := $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
-TEST_LOG := test.log
 
 ################################################################################
 ##                                 COMPILATION                                ##
@@ -48,7 +47,7 @@ val: $(NAME)
 	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
 
 clean:
-	@$(RM) -r $(OBJS) $(TEST_LOG)
+	@$(RM) -r $(OBJS)
 	@$(LOG) "Removing objects"
 	@$(RM) -r $(OBJ_DIR)
 	@$(LOG) "Removing objects directory"
