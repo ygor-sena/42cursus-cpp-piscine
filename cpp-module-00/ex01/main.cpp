@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:08:26 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/25 16:39:59 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:07:27 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int main(void) {
   std::string userInput;
 
   std::cout << "Welcome to the C++ phoneBook!" << std::endl;
-      while (strToUpper(userInput) != "EXIT") {
-    std::cout << "What do you want to do? The actions are: ADD, SEARCH or EXIT" << std::endl;
+  while (strToUpper(userInput) != "EXIT") {
+    std::cout << "What do you want to do? The actions are: ADD, SEARCH or EXIT"
+              << std::endl;
     getline(std::cin, userInput);
     if (strToUpper(userInput) == "ADD") {
       do {
@@ -53,12 +54,6 @@ int main(void) {
         contact.setPhoneNumber(userInput);
       } while (contact.getPhoneNumber().empty());
 
-      std::cout << "First name: " << contact.getFirstName() << std::endl;
-      std::cout << "Last name: " << contact.getLastName() << std::endl;
-      std::cout << "Nickname: " << contact.getNickname() << std::endl;
-      std::cout << "Darkest secret: " << contact.getDarkestSecret()
-                << std::endl;
-      std::cout << "Phone number: " << contact.getPhoneNumber() << std::endl;
       phoneBook.addContact(contact);
     }
     if (strToUpper(userInput) == "SEARCH") {
@@ -70,7 +65,8 @@ int main(void) {
           if (!hasLetter(userInput))
             phoneBook.searchContact(atoi(userInput.c_str()));
           else
-            std::cout << "The index must be a number between 0 and 7." << std::endl;
+            std::cout << "The index must be a number between 0 and 7."
+                      << std::endl;
         } while (hasLetter(userInput));
       }
     }
