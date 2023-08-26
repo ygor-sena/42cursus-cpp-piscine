@@ -33,7 +33,7 @@ void PhoneBook::addContact(Contact contact) {
 void PhoneBook::searchContact(int index) {
   if (index > MAX_ENTRY || index < 0)
     std::cout << "Invalid index, it must be between 0 and 7." << std::endl;
-  else if (_contacts[index].getFirstName() == "")
+  else if (_contacts[index].getFirstName() == "" || index > getTotalEntries())
     std::cout << "No contact saved in this index." << std::endl;
   else {
     _printContact(index);

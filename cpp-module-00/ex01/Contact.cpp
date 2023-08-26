@@ -8,46 +8,46 @@ Contact::~Contact(void) {
 }
 
 std::string Contact::getFirstName(void) {
-  return (this->firstName);
+  return (this->_firstName);
 }
 
 std::string Contact::getLastName(void) {
-  return (this->lastName);
+  return (this->_lastName);
 }
 
 std::string Contact::getNickname(void) {
-  return (this->nickname);
+  return (this->_nickname);
 }
 
 std::string Contact::getDarkestSecret(void) {
-  return (this->darkestSecret);
+  return (this->_darkestSecret);
 }
 
 std::string Contact::getPhoneNumber(void) {
-  return (this->phoneNumber);
+  return (this->_phoneNumber);
 }
 
 std::string Contact::setFirstName(std::string firstName) {
-  this->firstName = firstName;
-  return (this->firstName);
+  this->_firstName = firstName;
+  return (this->_firstName);
 }
 
 std::string Contact::setLastName(std::string lastName) {
-  this->lastName = lastName;
-  return (this->lastName);
+  this->_lastName = lastName;
+  return (this->_lastName);
 }
 
 std::string Contact::setNickname(std::string nickname) {
-  this->nickname = nickname;
-  return (this->nickname);
+  this->_nickname = nickname;
+  return (this->_nickname);
 }
 
 std::string Contact::setDarkestSecret(std::string darkestSecret) {
-  this->darkestSecret = darkestSecret;
-  return (this->darkestSecret);
+  this->_darkestSecret = darkestSecret;
+  return (this->_darkestSecret);
 }
 
 std::string Contact::setPhoneNumber(std::string phoneNumber) {
-  this->phoneNumber = phoneNumber;
-  return (this->phoneNumber);
+  this->_phoneNumber = phoneNumber;
+  return (this->_phoneNumber);
 }

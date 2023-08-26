@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:08:26 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/25 23:07:27 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:13:53 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int main(void) {
   std::string userInput;
 
   std::cout << "Welcome to the C++ phoneBook!" << std::endl;
-  while (strToUpper(userInput) != "EXIT") {
+  while (strToUpper(userInput).compare("EXIT")) {
     std::cout << "What do you want to do? The actions are: ADD, SEARCH or EXIT"
               << std::endl;
     getline(std::cin, userInput);
-    if (strToUpper(userInput) == "ADD") {
+    if (!strToUpper(userInput).compare("ADD")) {
       do {
         std::cout << "First name: " << std::endl;
         getline(std::cin, userInput);
@@ -56,7 +56,7 @@ int main(void) {
 
       phoneBook.addContact(contact);
     }
-    if (strToUpper(userInput) == "SEARCH") {
+    if (!strToUpper(userInput).compare("SEARCH")) {
       phoneBook.printPhoneBook();
       if (phoneBook.getTotalEntries() > 0) {
         std::cout << "Select a contact index (0-7): " << std::endl;

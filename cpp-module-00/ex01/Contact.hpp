@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 15:12:44 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/25 13:00:47 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/25 23:17:27 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class Contact {
   std::string setPhoneNumber(std::string phoneNumber);
 
  private:
-  std::string firstName;
-  std::string lastName;
-  std::string nickname;
-  std::string darkestSecret;
-  std::string phoneNumber;
+  std::string _firstName;
+  std::string _lastName;
+  std::string _nickname;
+  std::string _darkestSecret;
+  std::string _phoneNumber;
 };
 
 #endif  // CONTACT_HPP
