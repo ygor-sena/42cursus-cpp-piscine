@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 13:19:28 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/29 13:36:27 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:58:22 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void Harl::complain(std::string level) {
   void (Harl::*f[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning,
                               &Harl::_error};
   for (int i = 0; i < 4; i++) {
-    if (levels[i].compare(level))
+    if (!levels[i].compare(level))
       (this->*f[i])();
   }
 }
