@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:09:20 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/31 10:13:18 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:02:39 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ Fixed::Fixed() : _rawBits(0) {}
 
 Fixed::Fixed(const Fixed &fixed) { *this = fixed; }
 
-Fixed::Fixed(const int value) { this->_rawBits = value << this->_bitLength; }
+Fixed::Fixed(const int value) { this->_rawBits = value << this->_fractionalBits; }
 
 Fixed::Fixed(const float value) {
-  this->_rawBits = roundf(value * (1 << this->_bitLength));
+  this->_rawBits = roundf(value * (1 << this->_fractionalBits));
 }
 
 Fixed::~Fixed() {}
@@ -34,10 +34,10 @@ int Fixed::getRawBits(void) const { return (this->_rawBits); }
 void Fixed::setRawBits(int const raw) { this->_rawBits = raw; }
 
 float Fixed::toFloat(void) const {
-  return ((float)this->_rawBits / (float)(1 << this->_bitLength));
+  return ((float)this->_rawBits / (float)(1 << this->_fractionalBits));
 }
 
-int Fixed::toInt(void) const { return (this->_rawBits >> this->_bitLength); }
+int Fixed::toInt(void) const { return (this->_rawBits >> this->_fractionalBits); }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
   out << fixed.toFloat();

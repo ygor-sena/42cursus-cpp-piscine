@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 15:09:27 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/08/31 10:47:57 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:02:42 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed {
  private:
   int _rawBits;
-  static const int _bitLength = 8;
+  static const int _fractionalBits = 8;
 
  public:
   Fixed();                               // Default constructor
