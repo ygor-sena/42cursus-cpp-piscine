@@ -6,13 +6,13 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:49:38 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/01 18:05:33 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:51:14 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap("Default FragTrap") {
+FragTrap::FragTrap() : ClapTrap() {
   this->_hitPoints = 100;
   this->_attackDamage = 30;
   std::cout << "FragTrap default constructor called" << std::endl;
