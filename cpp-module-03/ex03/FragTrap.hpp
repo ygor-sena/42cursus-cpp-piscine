@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:49:42 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/01 18:25:52 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:47:12 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class FragTrap : virtual public ClapTrap {
   FragTrap();                                   // Default constructor
   FragTrap(std::string name);                   // Parameter constructor
   FragTrap(const FragTrap& source);             // Copy constructor
-  ~FragTrap();                                  // Destructor
+  virtual ~FragTrap();                                  // Destructor
   FragTrap& operator=(const FragTrap& source);  // Copy assignment operator
 
   // Member functions
-  void attack(std::string const& target);
+  virtual void attack(std::string const& target);
   void highFivesGuys(void);
 };
 

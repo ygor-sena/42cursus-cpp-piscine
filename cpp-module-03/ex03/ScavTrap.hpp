@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 13:55:18 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/01 18:25:56 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:47:02 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class ScavTrap : virtual public ClapTrap {
   ScavTrap();                                   // Default constructor
   ScavTrap(std::string name);                   // Parameter constructor
   ScavTrap(const ScavTrap& source);             // Copy constructor
-  ~ScavTrap();                                  // Destructor
+  virtual ~ScavTrap();                                  // Destructor
   ScavTrap& operator=(const ScavTrap& source);  // Copy assignment operator
 
   // Member functions
-  void attack(std::string const& target);
+  virtual void attack(std::string const& target);
   void guardGate(void);
 };
 
