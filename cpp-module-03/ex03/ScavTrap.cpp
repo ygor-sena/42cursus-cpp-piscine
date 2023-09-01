@@ -6,13 +6,13 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 14:01:47 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/01 18:05:20 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:51:21 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Default ScavTrap") {
+ScavTrap::ScavTrap() : ClapTrap() {
   this->_energyPoints = 50;
   std::cout << "ScavTrap default constructor called" << std::endl;
 }
