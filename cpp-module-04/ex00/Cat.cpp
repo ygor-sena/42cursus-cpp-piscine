@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:30:04 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/04 15:30:05 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:09:41 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cat::~Cat() { std::cout << "Cat destructor called" << std::endl; }
 
 Cat &Cat::operator=(const Cat &other) {
   std::cout << "Cat assignation operator called" << std::endl;
-  if (this != &other) this->type = other.type;
+  if (this != &other) this->_type = other._type;
   return (*this);
 }
 

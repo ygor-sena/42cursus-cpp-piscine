@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:30:12 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/04 15:30:13 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:08:54 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Dog::~Dog() { std::cout << "Dog destructor called" << std::endl; }
 
 Dog &Dog::operator=(const Dog &other) {
   std::cout << "Dog assignation operator called" << std::endl;
-  if (this != &other) this->type = other.type;
+  if (this != &other) this->_type = other._type;
   return (*this);
 }
 
