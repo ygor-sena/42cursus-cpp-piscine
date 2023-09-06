@@ -6,23 +6,32 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:01:14 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 13:38:47 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:56:12 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character() : _name("default") {
+  for (int i = 0; i < 4; i++) {
+    this->_inventory[i] = NULL;
+  }
   std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(std::string const& name) : _name(name) {
+  for (int i = 0; i < 4; i++) {
+    this->_inventory[i] = NULL;
+  }
   std::cout << "Character " << this->_name << " constructor called"
             << std::endl;
 }
 
 Character::Character(const Character& other) {
   *this = other;
+  for (int i = 0; i < 4; i++) {
+    this->_inventory[i] = other._inventory[i]->clone();
+  }
   std::cout << "Character " << this->_name << " copy constructor called"
             << std::endl;
 }
