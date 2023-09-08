@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:13:55 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/07 21:42:04 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:02:06 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,29 +44,29 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(
 std::string ShrubberyCreationForm::getTarget() const { return this->_target; }
 
 void ShrubberyCreationForm::_execute(void) const {
-    std::ofstream file;
+  std::ofstream file;
 
-    file.open((this->_target + "_shrubbery").c_str());
-    if (!file.is_open()) {
-      throw ShrubberyCreationForm::FileNotOpenException();
-    }
-    file << "                            '.,\n"
-         << "                              'b      *\n"
-         << "                               '$    #.\n"
-         << "                                $:   #:\n"
-         << "                                *#  @):\n"
-         << "                                :@,@):   ,.**:'\n"
-         << "                      ,         :@@*: ..**'\n"
-         << "                       '#o.    .:(@'.@*\"\n"
-         << "                          'bq,..:,@@*'   ,*\n"
-         << "                          ,p$q8,:@)'  .p*'\n"
-         << "                         '    '@@Pp@@*'\n"
-         << "                               Y7'.'\n"
-         << "                              :@):.\n"
-         << "                             .:@:'.\n"
-         << "                           .::(@:." << std::endl;
-    file << std::endl;
-    file.close();
+  file.open((this->_target + "_shrubbery").c_str());
+  if (!file.is_open()) {
+    throw ShrubberyCreationForm::FileNotOpenException();
+  }
+  file << "                            '.,\n"
+       << "                              'b      *\n"
+       << "                               '$    #.\n"
+       << "                                $:   #:\n"
+       << "                                *#  @):\n"
+       << "                                :@,@):   ,.**:'\n"
+       << "                      ,         :@@*: ..**'\n"
+       << "                       '#o.    .:(@'.@*\"\n"
+       << "                          'bq,..:,@@*'   ,*\n"
+       << "                          ,p$q8,:@)'  .p*'\n"
+       << "                         '    '@@Pp@@*'\n"
+       << "                               Y7'.'\n"
+       << "                              :@):.\n"
+       << "                             .:@:'.\n"
+       << "                           .::(@:." << std::endl;
+  file << std::endl;
+  file.close();
 }
 
 const char* ShrubberyCreationForm::FileNotOpenException::what() const throw() {

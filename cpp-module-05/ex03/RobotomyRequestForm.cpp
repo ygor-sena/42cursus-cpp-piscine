@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:09:20 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/07 21:42:16 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 22:01:57 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(
 std::string RobotomyRequestForm::getTarget() const { return this->_target; }
 
 void RobotomyRequestForm::_execute(void) const {
-    std::cout << "* drilling noises *" << std::endl;
-    if (std::rand() % 2 == 0) {
-      std::cout << this->_target << " has been robotomized successfully."
-                << std::endl;
-    } else {
-      std::cout << this->_target << " robotomization failed." << std::endl;
-    }
+  std::cout << "* drilling noises *" << std::endl;
+  if (std::rand() % 2 == 0) {
+    std::cout << this->_target << " has been robotomized successfully."
+              << std::endl;
+  } else {
+    std::cout << this->_target << " robotomization failed." << std::endl;
+  }
 }
