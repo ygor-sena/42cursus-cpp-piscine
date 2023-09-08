@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:13:55 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 18:47:36 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:42:04 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,7 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(
 
 std::string ShrubberyCreationForm::getTarget() const { return this->_target; }
 
-void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
-  if (this->getIsSigned() == false) {
-    throw AForm::FormNotSignedException();
-  } else if (executor.getGrade() > this->getGradeToExecute()) {
-    throw AForm::GradeTooLowException();
-  } else {
+void ShrubberyCreationForm::_execute(void) const {
     std::ofstream file;
 
     file.open((this->_target + "_shrubbery").c_str());
@@ -72,7 +67,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
          << "                           .::(@:." << std::endl;
     file << std::endl;
     file.close();
-  }
 }
 
 const char* ShrubberyCreationForm::FileNotOpenException::what() const throw() {

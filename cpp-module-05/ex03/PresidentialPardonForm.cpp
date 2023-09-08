@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:01:55 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 16:58:48 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:42:27 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,7 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(
 
 std::string PresidentialPardonForm::getTarget() const { return this->_target; }
 
-void PresidentialPardonForm::execute(Bureaucrat const& executor) const {
-  if (this->getIsSigned() == false) {
-    throw AForm::FormNotSignedException();
-  } else if (executor.getGrade() > this->getGradeToExecute()) {
-    throw AForm::GradeTooLowException();
-  } else {
-    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox."
-              << std::endl;
-  }
+void PresidentialPardonForm::_execute(void) const {
+  std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox."
+            << std::endl;
 }

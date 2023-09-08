@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:43:09 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 18:53:55 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:50:22 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void Bureaucrat::signForm(AForm& form) {
 	form.beSigned(*this);
 	std::cout << this->_name << " signs " << form.getName() << std::endl;
   } catch (std::exception& e) {
-	std::cout << this->_name << " cannot sign " << form.getName() << " "
+	std::cerr << this->_name << " cannot sign " << form.getName() << " "
 			  << e.what() << std::endl;
   }
 }
@@ -79,7 +79,7 @@ void Bureaucrat::executeForm(AForm const& form) {
 	form.execute(*this);
 	std::cout << this->_name << " executes " << form.getName() << std::endl;
   } catch (std::exception& e) {
-	std::cout << this->_name << " cannot execute " << form.getName() << " "
+	std::cerr << this->_name << " cannot execute " << form.getName() << " "
 			  << e.what() << std::endl;
   }
 }

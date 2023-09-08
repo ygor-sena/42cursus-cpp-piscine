@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 16:09:20 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 17:10:29 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:42:16 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,9 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(
   return *this;
 }
 
-std::string RobotomyRequestForm::getTarget() const {
-  return this->_target;
-}
+std::string RobotomyRequestForm::getTarget() const { return this->_target; }
 
-void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
-  if (this->getIsSigned() == false) {
-    throw AForm::FormNotSignedException();
-  } else if (executor.getGrade() > this->getGradeToExecute()) {
-    throw AForm::GradeTooLowException();
-  } else {
+void RobotomyRequestForm::_execute(void) const {
     std::cout << "* drilling noises *" << std::endl;
     if (std::rand() % 2 == 0) {
       std::cout << this->_target << " has been robotomized successfully."
@@ -58,5 +51,4 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
     } else {
       std::cout << this->_target << " robotomization failed." << std::endl;
     }
-  }
 }

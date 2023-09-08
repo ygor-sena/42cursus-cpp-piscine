@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:13:22 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 18:45:51 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:42:58 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AFORM_HPP
 
 #include <iostream>
+
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -24,6 +25,9 @@ class AForm {
   int const _gradeToSign;
   int const _gradeToExecute;
   bool _isSigned;
+
+ protected:
+  virtual void _execute(void) const = 0;
 
  public:
   AForm();  // Default constructor
@@ -42,7 +46,7 @@ class AForm {
 
   // Member functions
   void beSigned(Bureaucrat const& bureaucrat);
-  virtual void execute(Bureaucrat const& executor) const = 0;
+  void execute(Bureaucrat const& executor) const;
 
   // Exceptions
   class GradeTooHighException : public std::exception {
@@ -57,7 +61,7 @@ class AForm {
 
   class FormNotSignedException : public std::exception {
    public:
-	virtual const char* what() const throw();
+    virtual const char* what() const throw();
   };
 };
 

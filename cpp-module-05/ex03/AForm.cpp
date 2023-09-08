@@ -87,3 +87,13 @@ std::ostream& operator<<(std::ostream& os, AForm const& aform) {
   }
   return os;
 }
+
+void AForm::execute(Bureaucrat const& executor) const {
+  if (this->getIsSigned() == false) {
+	throw AForm::FormNotSignedException();
+  } else if (executor.getGrade() > this->getGradeToExecute()) {
+	throw AForm::GradeTooLowException();
+  } else {
+	this->_execute();
+  }
+}

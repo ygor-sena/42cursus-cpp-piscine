@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:45:57 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 20:51:52 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:47:25 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main(void) {
   try {
     makeUselessInternWorkToTheBone("some bullshit form", b1.getName());
   } catch (std::exception &e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
   std::cout << BLUE << "TEST INVALID FORM FINISHED" << RESET << std::endl;
 
@@ -54,6 +54,8 @@ void makeUselessInternWorkToTheBone(const std::string &formName,
   Intern someRandomIntern;
   AForm *rrf;
   rrf = someRandomIntern.makeForm(formName, target);
+  rrf->beSigned(Bureaucrat("Bender", 1));
+  rrf->execute(Bureaucrat("Bender", 1));
 
   std::cout << *rrf << std::endl;
   delete rrf;

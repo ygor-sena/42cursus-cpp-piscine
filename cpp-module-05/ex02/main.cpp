@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:45:57 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/06 16:11:59 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:50:43 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void checkBureaucratGrade(Bureaucrat& b1, Bureaucrat& b2) {
     b1.incrementGrade();
 
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   // Can't decrement, because Buraucrat is already at the lowest grade
   try {
     b2.decrementGrade();
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   std::cout << GREEN << b1 << RESET << std::endl;
@@ -74,7 +74,7 @@ void checkPresidentialPardonForm(Bureaucrat& b1, Bureaucrat& b2) {
     b1.signForm(f1);
     b1.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   // b2 can't sign and execute the form because he hasn't the
@@ -83,7 +83,7 @@ void checkPresidentialPardonForm(Bureaucrat& b1, Bureaucrat& b2) {
     b2.signForm(f1);
     b2.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   std::cout << GREEN << f1 << RESET << std::endl;
@@ -103,7 +103,7 @@ void checkRobotomyRequestForm(Bureaucrat& b1, Bureaucrat& b2) {
     b1.signForm(f1);
     b1.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   // b2 can't sign and execute the form because he hasn't the
@@ -112,7 +112,7 @@ void checkRobotomyRequestForm(Bureaucrat& b1, Bureaucrat& b2) {
     b2.signForm(f1);
     b2.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   std::cout << GREEN << f1 << RESET << std::endl;
@@ -132,7 +132,7 @@ void checkShrubberyCreationForm(Bureaucrat& b1, Bureaucrat& b2) {
     b1.signForm(f1);
     b1.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   // b2 can sign the form because he has the necessary grade level
@@ -141,7 +141,7 @@ void checkShrubberyCreationForm(Bureaucrat& b1, Bureaucrat& b2) {
     b2.signForm(f1);
     b2.executeForm(f1);
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   std::cout << GREEN << f1 << RESET << std::endl;
