@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:45:57 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/05 14:56:56 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/07 21:53:10 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int main(void) {
     b1.incrementGrade();
 
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
   
   try {
     b2.decrementGrade();
   } catch (std::exception& e) {
-    std::cout << RED << e.what() << RESET << std::endl;
+    std::cerr << RED << e.what() << RESET << std::endl;
   }
 
   std::cout << GREEN << b1 << RESET << std::endl;
