@@ -15,7 +15,7 @@ LOG   := printf "[$(CYAN)$(CHECK)$(RESET)] %s\n"
 
 OBJ_DIR   := obj
 
-SOURCES := main.cpp
+SOURCES := main_intra.cpp
 
 OBJS := $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))
 

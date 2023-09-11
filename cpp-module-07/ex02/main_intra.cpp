@@ -6,12 +6,16 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 09:30:40 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/11 09:30:41 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/11 12:44:37 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Array.hpp"
+
+#define MAX_VAL 750
 
 int main(int, char**)
 {
