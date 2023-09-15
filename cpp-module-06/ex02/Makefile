@@ -8,7 +8,6 @@ RESET := \033[0m
 CYAN  := \033[1;36m
 CHECK := \342\234\224
 LOG   := printf "[$(CYAN)$(CHECK)$(RESET)] %s\n"
-FILE_EXTENSION = *_shrubbery
 
 ################################################################################
 ##                                 DIRECTORIES                                ##

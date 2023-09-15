@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:55:14 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/08 18:23:25 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/08 22:22:57 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ OutputConverter::OutputConverter(char const& conversion) {
 
 OutputConverter::OutputConverter(int const& conversion) {
   try {
-    if (conversion == 0) {
+    if (conversion >=0 || conversion <= 9) {
       throw ScalarConverter::NonDisplayableException();
     }
     std::cout << "char: '" << static_cast<char>(conversion) << "'" << std::endl;

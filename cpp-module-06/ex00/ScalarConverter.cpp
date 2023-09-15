@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:24:00 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/08 18:25:29 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/09 10:36:17 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ float ScalarConverter::_toFloat(std::string const& literal) {
   if (Validation::_isNaN(literal)) {
     return std::numeric_limits<float>::quiet_NaN();
   }
-  if (Validation::_isInf(literal)) {
+  if (Validation::_isNegInf(literal)) {
     return std::numeric_limits<float>::infinity();
   }
   try {
@@ -70,7 +70,7 @@ double ScalarConverter::_toDouble(std::string const& literal) {
   if (Validation::_isNaN(literal)) {
     return std::numeric_limits<double>::quiet_NaN();
   }
-  if (Validation::_isInf(literal)) {
+  if (Validation::_isNegInf(literal)) {
     return std::numeric_limits<double>::infinity();
   }
   try {
@@ -80,9 +80,15 @@ double ScalarConverter::_toDouble(std::string const& literal) {
   }
 }
 
-bool ScalarConverter::Validation::_isInf(std::string const& literal) {
-  if (literal == "+inf" || literal == "+inff" || literal == "-inf" ||
-      literal == "-inff") {
+bool ScalarConverter::Validation::_isNegInf(std::string const& literal) {
+  if (literal == "-inf" || literal == "-inff") {
+    return true;
+  }
+  return false;
+}
+
+bool ScalarConverter::Validation::_isPosInf(std::string const& literal) {
+  if (literal == "+inf" || literal == "+inff") {
     return true;
   }
   return false;
@@ -100,15 +106,16 @@ int ScalarConverter::Validation::_getInputType(std::string const& literal) {
 
   if (_isNaN(literal)) {
     return (NAN);
-  } else if (_isInf(literal)) {
-    return (INF);
-  }
-  if (_isFloat(literal)) {
+  } else if (_isNegInf(literal)) {
+    return (POS_INF);
+  } else if (_isPosInf(literal)) {
+    return (NEG_INF);
+  } else if (_isDouble(literal)) {
+    return (DOUBLE);
+  } else if (_isFloat(literal)) {
     return (FLOAT);
   } else if (_isInt(literal)) {
     return (INT);
-  } else if (_isDouble(literal)) {
-    return (DOUBLE);
   } else if (_isChar(literal)) {
     return (CHAR);
   }
@@ -117,7 +124,7 @@ int ScalarConverter::Validation::_getInputType(std::string const& literal) {
 }
 
 bool ScalarConverter::Validation::_isChar(std::string const& literal) {
-  if (_isNaN(literal) || _isInf(literal)) {
+  if (_isNaN(literal) || _isNegInf(literal)) {
     return true;
   }
   if (literal.length() == 1 && !isdigit(literal[0])) {
@@ -181,10 +188,13 @@ void ScalarConverter::convert(std::string const& literal) {
 
   switch (type) {
     case NAN:
-      displayError(literal);
+      displayError(NAN);
       break;
-    case INF:
-      displayError(literal);
+    case POS_INF:
+      displayError(POS_INF);
+      break;
+    case NEG_INF:
+      displayError(NEG_INF);
       break;
     case CHAR:
       OutputConverter(_toChar(literal));
@@ -204,23 +214,20 @@ void ScalarConverter::convert(std::string const& literal) {
   }
 }
 
-void ScalarConverter::displayError(std::string const& literal) {
-  int len = literal.length();
-  if (literal.substr(0, len) == "nan" || literal.substr(0, len) == "nanf") {
+void ScalarConverter::displayError(int errCode) {
+  if (errCode == NAN) {
     std::cerr << "char: impossible" << std::endl;
     std::cerr << "int: impossible" << std::endl;
     std::cerr << "float: nanf" << std::endl;
     std::cerr << "double: nan" << std::endl;
     return;
-  } else if (literal.substr(0, len) == "+inf" ||
-             literal.substr(0, len) == "+inff") {
+  } else if (errCode == POS_INF) {
     std::cerr << "char: impossible" << std::endl;
     std::cerr << "int: impossible" << std::endl;
     std::cerr << "float: inff" << std::endl;
     std::cerr << "double: inf" << std::endl;
     return;
-  } else if (literal.substr(0, len) == "-inf" ||
-             literal.substr(0, len) == "-inff") {
+  } else if (errCode == NEG_INF) {
     std::cerr << "char: impossible" << std::endl;
     std::cerr << "int: impossible" << std::endl;
     std::cerr << "float: -inff" << std::endl;

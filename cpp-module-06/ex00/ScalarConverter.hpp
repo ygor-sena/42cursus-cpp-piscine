@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 14:30:38 by yde-goes          #+#    #+#             */
-/*   Updated: 2023/09/08 18:05:43 by yde-goes         ###   ########.fr       */
+/*   Updated: 2023/09/09 09:43:39 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include "OutputConverter.hpp"
 
-enum e_type { NAN, INF, CHAR, INT, FLOAT, DOUBLE };
+enum e_type { NAN, POS_INF, NEG_INF, CHAR, INT, FLOAT, DOUBLE };
 
 class ScalarConverter {
  private:
@@ -41,7 +41,7 @@ class ScalarConverter {
       ScalarConverter const& rhs);  // Copy Assignment operator
 
   void convert(std::string const& literal);
-  void displayError(std::string const& literal);
+  void displayError(int errCode);
 
   // Exceptions
   class ImpossibleConversionException : public std::exception {
@@ -57,7 +57,8 @@ class ScalarConverter {
    public:
     static int _getInputType(std::string const& literal);
 	static bool _isNaN(std::string const& literal);
-	static bool _isInf(std::string const& literal);
+	static bool _isNegInf(std::string const& literal);
+	static bool _isPosInf(std::string const& literal);
     static bool _isChar(std::string const& literal);
     static bool _isInt(std::string const& literal);
     static bool _isFloat(std::string const& literal);
