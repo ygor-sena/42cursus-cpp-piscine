@@ -21,3 +21,6 @@ About C++ code formatting:
 
 Repositories of fellow 42 students:
 - https://github.com/qingqingqingli/CPP/wiki/
+
+Introductory playlist about C++:
+- https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
