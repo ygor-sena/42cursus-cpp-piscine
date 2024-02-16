@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/14 16:39:46 by yde-goes          #+#    #+#             */
+/*   Updated: 2024/02/16 16:40:10 by yde-goes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
@@ -21,8 +33,8 @@ class PmergeMe {
   template <typename T>
   T _sort(T &list);
 
-  template <typename Container>
-  static void _sortPairs(Container &list, size_t size);
+  template <typename T>
+  static void _sortPairs(T &list, size_t size);
 
  public:
   PmergeMe();
@@ -48,29 +60,26 @@ template <typename T>
 T createInsertionOrder(size_t size) {
   T sequence;
 
-  if (size < 1) {
-    return (sequence);
-  }
+  if (size < 1) return sequence;
 
   int jacobsthal_it = 2;
   int next = jacobsthal(jacobsthal_it++);
-  sequence.push_back(next);
 
-  while (sequence.size() < size) {
+  while (next < static_cast<int>(size)) {
+    sequence.push_back(next);
     next = jacobsthal(jacobsthal_it++);
-    if (next >= static_cast<int>(size)) {
-      next = size;
-    }
-    while (sequence.size() < size && next > 0) {
-      sequence.push_back(next);
-      if (std::find(sequence.begin(), sequence.end(), next - 1) !=
-          sequence.end()) {
-        break;
-      }
-      next--;
-    }
   }
-  return (sequence);
+
+  // Fill in the gaps with decreasing numbers
+  next = size;
+  while (sequence.size() < size) {
+    if (std::find(sequence.begin(), sequence.end(), next) == sequence.end()) {
+      sequence.push_back(next);
+    }
+    next--;
+  }
+
+  return sequence;
 }
 
 #endif  // PMERGEME_HPP
