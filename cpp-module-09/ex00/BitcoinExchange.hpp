@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/10 16:40:41 by yde-goes          #+#    #+#             */
+/*   Updated: 2024/02/17 15:13:05 by yde-goes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define RESET "\033[0m"
-#define HEADER_FILE "date | value"
-#define HEADER_DATABASE "date,exchange_rate"
+#define INPUT_HEADER "date | value"
+#define DATABASE_HEADER "date,exchange_rate"
+#define DATABASE_PATH "data/data.csv"
 
 #include <cstdlib>
 #include <fstream>
@@ -20,13 +33,13 @@ class BitcoinExchange {
   void readInputFile(std::string filename);
 
   class FileCouldNotBeOpenedException : public std::exception {
-    virtual const char* what() const throw() {
-      return "could not open file.";
-    }
+    virtual const char* what() const throw() { return "could not open file."; }
   };
 
   class InvalidFileHeaderException : public std::exception {
-    virtual const char* what() const throw() { return "invalid file header format"; }
+    virtual const char* what() const throw() {
+      return "invalid file header format";
+    }
   };
 
   class InvalidDateFormatException : public std::exception {
@@ -56,15 +69,13 @@ class BitcoinExchange {
   };
 
   class OverflowRateException : public std::exception {
-    virtual const char* what() const throw() {
-      return "too large a number.";
-    }
+    virtual const char* what() const throw() { return "too large a number."; }
   };
 
  private:
   std::map<std::string, float> _database;
 
-  BitcoinExchange(BitcoinExchange const &src);
+  BitcoinExchange(BitcoinExchange const& src);
   BitcoinExchange& operator=(BitcoinExchange const& src);
 
   void _loadDatabase(void);

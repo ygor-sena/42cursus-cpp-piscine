@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/10 16:40:32 by yde-goes          #+#    #+#             */
+/*   Updated: 2024/02/17 15:14:46 by yde-goes         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "BitcoinExchange.hpp"
 
 int main(int argc, char *argv[]) {
@@ -13,5 +25,3 @@ int main(int argc, char *argv[]) {
   }
   return (EXIT_SUCCESS);
 }
-
-// Path: 42-cpp-modules/cpp-module-09/rex00/Makefile
