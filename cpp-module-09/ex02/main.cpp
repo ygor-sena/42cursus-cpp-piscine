@@ -6,7 +6,7 @@
 /*   By: yde-goes <yde-goes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:39 by yde-goes          #+#    #+#             */
-/*   Updated: 2024/02/16 16:40:14 by yde-goes         ###   ########.fr       */
+/*   Updated: 2024/02/22 20:42:21 by yde-goes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ int main(int argc, char **argv) {
 bool validate_input(char **argv) {
   std::vector<int> numbers;
   for (int i = 1; argv[i]; i++) {
-    if (isdigit(argv[i][0]) == 0) {
-      return (false);
+    for (int j = 0; argv[i][j]; j++) {
+      if (!std::isdigit(argv[i][j])) {
+        return false;
+      }
     }
     int n = std::atoi(argv[i]);
     if (std::find(numbers.begin(), numbers.end(), n) != numbers.end()) {
