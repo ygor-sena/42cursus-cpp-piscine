@@ -12,7 +12,7 @@ The 12th project of 42 curriculum is a C++ piscine which aims to introduce stude
 |06|C++ casts|Completed|100/100|
 |07|C++ templates|Completed|100/100|
 |08|Templated containers, iterators, algorithms|Completed|100/100|
-|09|STL|Ongoing|-|
+|09|STL|Completed|100/100|
 
 # References
 
