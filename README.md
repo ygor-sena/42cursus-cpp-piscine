@@ -24,3 +24,7 @@ Repositories of fellow 42 students:
 
 Introductory playlist about C++:
 - https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb
+
+References for Ford-Johnson algorithm implementation:
+- https://github.com/nerraou/Ford-Johnson-algorithm
+- https://github.com/decidedlyso/merge-insertion-sort
