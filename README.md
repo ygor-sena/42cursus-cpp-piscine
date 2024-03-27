@@ -1,4 +1,14 @@
-# 42cursus-cpp-piscine
+<p align="center">
+    <img src="https://github.com/ygor-sena/42cursus-cpp-piscine/assets/102881479/2114f901-1737-410e-8eca-4ff9472a05ed">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/OS-Linux-blue" alt="OS">
+    <img src="https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B-blue.svg" alt="Language">
+    <img src="https://img.shields.io/badge/Grade-100%2F100-brightgreen.svg" alt="Grade">
+    <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
+</p>
+
 The 12th project of 42 curriculum is a C++ piscine which aims to introduce students to Object-Oriented Programming. C++ was chosen because it's derived from our old and familiar C Language. Since C++ can be complex, the code will adhere with the C++98 standard. 
 
 |Module|Concepts learned|Status|Grade|
