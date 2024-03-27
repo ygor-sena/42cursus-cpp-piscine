@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/OS-Linux-blue" alt="OS">
-    <img src="https://img.shields.io/badge/Language-C%20%7C%20C%2B%2B-blue.svg" alt="Language">
+    <img src="https://img.shields.io/badge/Language-C%2B%2B98-blue.svg" alt="Language">
     <img src="https://img.shields.io/badge/Grade-100%2F100-brightgreen.svg" alt="Grade">
     <img src="https://img.shields.io/badge/Status-Completed-brightgreen.svg" alt="Status">
 </p>
